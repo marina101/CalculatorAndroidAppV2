@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CalculatorV2</string>
+    <string name="action_settings">Settings</string>
+    <string name="buttonNine">9</string>
+</resources>
