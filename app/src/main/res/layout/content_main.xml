@@ -102,12 +102,13 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="+/-"
         android:layout_below="@+id/buttonC"
         android:layout_alignLeft="@+id/buttonC"
         android:layout_alignStart="@+id/buttonC"
         android:maxWidth="80dp"
-        android:minWidth="80dp" />/>
+        android:minWidth="80dp"
+        android:id="@+id/buttonNeg" />/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -313,7 +314,16 @@
         android:layout_below="@+id/button5"
         android:layout_toRightOf="@+id/button5"
         android:layout_toEndOf="@+id/button5"
-        android:minWidth="80dp" /><![CDATA[
+        android:minWidth="80dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/display"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" /><![CDATA[
 
     />
 

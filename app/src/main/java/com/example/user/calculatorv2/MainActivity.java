@@ -11,10 +11,15 @@ import android.view.MenuItem;
 import android.widget.Button;       //for using buttons
 import android.widget.TextView;     //for output
 
+/**
+ * This class is the driver for the logic behind the user interface, it defines which code will run with which button
+ * Author: Marina Chirchikova
+ */
 public class MainActivity extends AppCompatActivity {
     public String sign = "";
     public String total = "";
-    public Double tempDouble, tempDouble2;
+    public Double tempDouble = 0.0;
+    public Double tempDouble2 = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonLN = (Button)findViewById(R.id.buttonLN);
         Button buttonSin = (Button)findViewById(R.id.buttonSin);
         Button buttonSqrt = (Button)findViewById(R.id.buttonSqrt);
+        Button buttonNeg = (Button)findViewById(R.id.buttonNeg); //negative/positive button
         Button buttonD = (Button)findViewById(R.id.buttonD);    //divide
         Button buttonM = (Button)findViewById(R.id.buttonM);    //multiply
         Button buttonS = (Button)findViewById(R.id.buttonS);    //subtract
@@ -59,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
         Button buttonR = (Button)findViewById(R.id.buttonR);    //equals sign
         Button buttonP = (Button)findViewById(R.id.buttonP);    //decimal
 
-        //Create textview object
-
+        TextView output = (TextView)findViewById(R.id.editText);
+        output.append(String.valueOf(0));
 
         //Creates event handlers for each button
 
@@ -70,7 +76,12 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v)
                 {
                     TextView output = (TextView)findViewById(R.id.editText);
+                    if(output.getText().toString().equals("0")){
+                        output.setText("");
+                    }
                     output.append("0");
+                    TextView display = (TextView)findViewById(R.id.display);
+                    display.append("0");
                 }
             }
         );
@@ -81,7 +92,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v)
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
+                        if(output.getText().toString().equals("0")){
+                            output.setText("");
+                        }
                         output.append("1");
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.append("1");
                     }
                 }
         );
@@ -92,7 +108,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v)
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
+                        if(output.getText().toString().equals("0")){
+                            output.setText("");
+                        }
                         output.append("2");
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.append("2");
                     }
                 }
         );
@@ -103,7 +124,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v)
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
+                        if(output.getText().toString().equals("0")){
+                            output.setText("");
+                        }
                         output.append("3");
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.append("3");
                     }
                 }
         );
@@ -114,7 +140,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v)
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
+                        if(output.getText().toString().equals("0")){
+                            output.setText("");
+                        }
                         output.append("4");
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.append("4");
                     }
                 }
         );
@@ -125,7 +156,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v)
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
+                        if(output.getText().toString().equals("0")){
+                            output.setText("");
+                        }
                         output.append("5");
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.append("5");
                     }
                 }
         );
@@ -136,7 +172,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v)
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
+                        if(output.getText().toString().equals("0")){
+                            output.setText("");
+                        }
                         output.append("6");
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.append("6");
                     }
                 }
         );
@@ -147,7 +188,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v)
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
+                        if(output.getText().toString().equals("0")){
+                            output.setText("");
+                        }
                         output.append("7");
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.append("7");
                     }
                 }
         );
@@ -158,7 +204,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v)
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
+                        if(output.getText().toString().equals("0")){
+                            output.setText("");
+                        }
                         output.append("8");
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.append("8");
                     }
                 }
         );
@@ -169,7 +220,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v)
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
+                        if(output.getText().toString().equals("0")){
+                            output.setText("");
+                        }
                         output.append("9");
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.append("9");
                     }
                 }
         );
@@ -181,6 +237,31 @@ public class MainActivity extends AppCompatActivity {
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
                         output.append(".");
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.append(".");
+                    }
+                }
+        );
+
+        //This button makes the number negative if it is currently positive, or positive if it is negative
+        buttonNeg.setOnClickListener(
+                new Button.OnClickListener()
+                {
+                    public void onClick(View v)
+                    {
+                        TextView output = (TextView)findViewById(R.id.editText);
+                        TextView display = (TextView)findViewById(R.id.display);
+                        String text = output.getText().toString();
+                        if(text.charAt(0) != '-' && !(output.getText().toString().equals("0"))){
+                            output.setText("-" + text);
+                            display.setText("-" + text);
+                        }
+                        else if(text.charAt(0) == '-' && !(output.getText().toString().equals("0")))
+                        {
+                            String good = text.substring(1);
+                            output.setText(good);
+                            display.setText(good);
+                        }
                     }
                 }
         );
@@ -191,7 +272,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v)
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
-                        output.setText("");
+                        output.setText("0");
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.setText("");
                     }
                 }
         );
@@ -205,8 +288,12 @@ public class MainActivity extends AppCompatActivity {
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
                         tempDouble = Double.parseDouble(output.getText().toString());
-                        output.setText("");
+                        output.setText("0");
                         sign="+";
+                        TextView display = (TextView)findViewById(R.id.display);
+                        if(display.getText().toString().equals(""))
+                            display.append("0");
+                        display.append("+");
                     }
                 }
         );
@@ -218,8 +305,12 @@ public class MainActivity extends AppCompatActivity {
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
                         tempDouble = Double.parseDouble(output.getText().toString());
-                        output.setText("");
+                        output.setText("0");
                         sign="-";
+                        TextView display = (TextView)findViewById(R.id.display);
+                        if(display.getText().toString().equals(""))
+                            display.append("0");
+                        display.append("-");
                     }
                 }
         );
@@ -231,8 +322,12 @@ public class MainActivity extends AppCompatActivity {
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
                         tempDouble = Double.parseDouble(output.getText().toString());
-                        output.setText("");
+                        output.setText("0");
                         sign="*";
+                        TextView display = (TextView)findViewById(R.id.display);
+                        if(display.getText().toString().equals(""))
+                            display.append("0");
+                        display.append("*");
                     }
                 }
         );
@@ -244,8 +339,12 @@ public class MainActivity extends AppCompatActivity {
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
                         tempDouble = Double.parseDouble(output.getText().toString());
-                        output.setText("");
+                        output.setText("0");
                         sign="/";
+                        TextView display = (TextView)findViewById(R.id.display);
+                        if(display.getText().toString().equals(""))
+                            display.append("0");
+                        display.append("/");
                     }
                 }
         );
@@ -259,6 +358,10 @@ public class MainActivity extends AppCompatActivity {
                         tempDouble = Double.parseDouble(output.getText().toString());
                         output.setText("");
                         sign="exp";
+                        double value = Math.exp(tempDouble);
+                        output.setText(Double.toString(value));
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.setText("");
                     }
                 }
         );
@@ -272,6 +375,10 @@ public class MainActivity extends AppCompatActivity {
                         tempDouble = Double.parseDouble(output.getText().toString());
                         output.setText("");
                         sign="tenex";
+                        double value = Math.exp(tempDouble * 2.3025850929940457);
+                        output.setText(Double.toString(value));
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.setText("");
                     }
                 }
         );
@@ -285,6 +392,10 @@ public class MainActivity extends AppCompatActivity {
                         tempDouble = Double.parseDouble(output.getText().toString());
                         output.setText("");
                         sign="ln";
+                        double value = Math.log(tempDouble);
+                        output.setText(Double.toString(value));
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.setText("");
                     }
                 }
         );
@@ -298,6 +409,10 @@ public class MainActivity extends AppCompatActivity {
                         tempDouble = Double.parseDouble(output.getText().toString());
                         output.setText("");
                         sign="sin";
+                        double value = Math.sin(tempDouble);
+                        output.setText(Double.toString(value));
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.setText("");
                     }
                 }
         );
@@ -311,6 +426,10 @@ public class MainActivity extends AppCompatActivity {
                         tempDouble = Double.parseDouble(output.getText().toString());
                         output.setText("");
                         sign="sqrt";
+                        double value = Math.sqrt(tempDouble);
+                        output.setText(Double.toString(value));
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.setText("");
                     }
                 }
         );
@@ -322,8 +441,12 @@ public class MainActivity extends AppCompatActivity {
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
                         tempDouble = Double.parseDouble(output.getText().toString());
-                        output.setText("");
+                        output.setText("0");
                         sign="xy";
+                        TextView display = (TextView)findViewById(R.id.display);
+                        if(display.getText().toString().equals(""))
+                            display.append("0");
+                        display.append("^");
                     }
                 }
         );
@@ -334,6 +457,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v) {
                         TextView output = (TextView) findViewById(R.id.editText);
+                        TextView display = (TextView)findViewById(R.id.display);
+                        display.setText("");
 
                         //depending on what the sign is
                         if (sign == "+") {
@@ -356,36 +481,21 @@ public class MainActivity extends AppCompatActivity {
                                 output.setText(Double.toString(tempDouble / tempDouble2));
                             }
                         }
-                        else if (sign.equals("exp")) {
-                            double value = Math.exp(tempDouble);
-                            output.setText(Double.toString(value));
-                        }
-                        else if (sign.equals("tenex")) {
-                            double value = Math.exp(tempDouble * 2.3025850929940457);
-                            output.setText(Double.toString(value));
-                        }
-                        else if (sign.equals("ln")) {
-                            double value = Math.log(tempDouble);
-                            output.setText(Double.toString(value));
-                        }
-                        else if (sign.equals("sqrt")) {
-                            double value = Math.sqrt(tempDouble);
-                            output.setText(Double.toString(value));
-                        }
-                        else if (sign.equals("sin")) {
-                            double value = Math.sin(tempDouble);
-                            output.setText(Double.toString(value));     //note: gives different result than test...
-                        }
                         else if (sign.equals("xy")) {
                             tempDouble2 = Double.parseDouble(output.getText().toString());
                             double value = Math.pow(tempDouble, tempDouble2);
                             output.setText(Double.toString(value));
+                        }
+                        else  {
+                            //do nothing
                         }
 
                         sign="";
                     }
                 }
         );
+
+
 
     }
 
