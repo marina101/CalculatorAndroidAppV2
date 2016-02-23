@@ -358,7 +358,6 @@ public class MainActivity extends AppCompatActivity {
                         tempDouble = Double.parseDouble(output.getText().toString());
                         output.setText("");
                         sign="exp";
-                        //double value = Math.exp(tempDouble);
                         double value = Algorithms.exp(tempDouble);
                         output.setText(Double.toString(value));
                         TextView display = (TextView)findViewById(R.id.display);
@@ -376,7 +375,6 @@ public class MainActivity extends AppCompatActivity {
                         tempDouble = Double.parseDouble(output.getText().toString());
                         output.setText("");
                         sign="tenex";
-                        //double value = Math.exp(tempDouble * 2.3025850929940457);
                         double value = Algorithms.tenEx(tempDouble);
                         output.setText(Double.toString(value));
                         TextView display = (TextView)findViewById(R.id.display);
@@ -394,7 +392,6 @@ public class MainActivity extends AppCompatActivity {
                         tempDouble = Double.parseDouble(output.getText().toString());
                         output.setText("");
                         sign="ln";
-                        //double value = Math.log(tempDouble);
                         double value = Algorithms.natLog(tempDouble);
                         output.setText(Double.toString(value));
                         TextView display = (TextView)findViewById(R.id.display);
@@ -412,7 +409,6 @@ public class MainActivity extends AppCompatActivity {
                         tempDouble = Double.parseDouble(output.getText().toString());
                         output.setText("");
                         sign="sin";
-                        //double value = Math.sin(tempDouble);
                         double value = Algorithms.sin(tempDouble);
                         output.setText(Double.toString(value));
                         TextView display = (TextView)findViewById(R.id.display);
@@ -430,7 +426,6 @@ public class MainActivity extends AppCompatActivity {
                         tempDouble = Double.parseDouble(output.getText().toString());
                         output.setText("");
                         sign="sqrt";
-                        //double value = Math.sqrt(tempDouble);
                         double value = Algorithms.sqrt(tempDouble);
                         output.setText(Double.toString(value));
                         TextView display = (TextView)findViewById(R.id.display);
@@ -488,7 +483,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else if (sign.equals("xy")) {
                             tempDouble2 = Double.parseDouble(output.getText().toString());
-                            //double value = Math.pow(tempDouble, tempDouble2);
                             double value = Algorithms.power(tempDouble, tempDouble2);
                             output.setText(Double.toString(value));
                         }

@@ -42,7 +42,7 @@ public class Algorithms {
     /**
      * This method calculates the square root of n.
      *
-     * @param value of n
+     * @param n - value of n
      * @return value of square root of n
      */
     public static double sqrt(double n) {
@@ -66,7 +66,7 @@ public class Algorithms {
     /**
      * This method calculates the natural logarithm of x with precision 10^-n
      *
-     * @param value of x
+     * @param x - value of x
      * @return value of 10^-n
      */
     public static double natLog(double x) {
@@ -113,8 +113,8 @@ public class Algorithms {
     /**
      * This method raises x to the power of y.
      *
-     * @param value of x
-     * @param value of y
+     * @param x = value of x
+     * @param y = value of y
      * @return value of x^y
      */
     public static double power(double x, double y){
@@ -196,7 +196,7 @@ public class Algorithms {
     /**
      * Finds the natural exponent of a double.
      *
-     * @param value of power
+     * @param power = value of power
      * @return value of e^power
      */
     public static double exp(double power) {
@@ -214,7 +214,7 @@ public class Algorithms {
     /**
      * This method calculates the sine value of an angle using the CORDIC algorithm
      *
-     * @param 	value of angle expressed in radiant
+     * @param 	angle = value of angle expressed in radiant
      * @return 	sine value of angle
      */
     public static double sin(double angle) {
@@ -271,10 +271,10 @@ public class Algorithms {
 
 /************************ PRIVATE METHODS ****************************/
 
-    /**
+    /*
      * This method gives the absolute value of a double float.
      *
-     * @param value of n
+     * @param n = value of n
      * @return absolute value of n
      */
     private static double abs(double n) {
@@ -286,7 +286,7 @@ public class Algorithms {
 
 
 
-    /**
+    /*
      * This method returns the factorial of a given n.
      *
      * @param value of n
@@ -306,7 +306,7 @@ public class Algorithms {
 
 
 
-    /**
+    /*
      * This method returns a double to an integer power.
      *
      * @param value of base
@@ -332,7 +332,7 @@ public class Algorithms {
 
 
 
-    /**
+    /*
      * This method calculates the natural exponent with a Talyor series.
      *
      * @param power
@@ -362,7 +362,7 @@ public class Algorithms {
     }
 
 
-    /**
+    /*
      * This method raises x to the power y but only accept integer based power values.
      *
      * @param value of x
