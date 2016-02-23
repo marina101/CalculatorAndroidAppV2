@@ -392,8 +392,13 @@ public class MainActivity extends AppCompatActivity {
                         tempDouble = Double.parseDouble(output.getText().toString());
                         output.setText("");
                         sign="ln";
-                        double value = Algorithms.natLog(tempDouble);
-                        output.setText(Double.toString(value));
+                        if (tempDouble == 0) {
+                            output.setText("Infinity");
+                        }
+                        else {
+                            double value = Algorithms.natLog(tempDouble);
+                            output.setText(Double.toString(value));
+                        }
                         TextView display = (TextView)findViewById(R.id.display);
                         display.setText("");
                     }
