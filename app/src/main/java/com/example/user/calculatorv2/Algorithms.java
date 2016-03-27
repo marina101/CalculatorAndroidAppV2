@@ -75,7 +75,7 @@ public class Algorithms {
      * @param x - value of x
      * @return value of 10^-n
      */
-    public static double natLog(double x) {
+    public static double natLog(double x) throws MathException {
 
         double y = 0;
         double m = 0;
@@ -83,7 +83,7 @@ public class Algorithms {
         //If x<=0, return false because x should be positive real number
 
         if (x <= 0) {
-            System.err.println("ERROR: False and x should be positive number!");
+            throw new MathException("LN argument must be positive");
         }
 
         //If 0<x<2, use Taylor series to compute ln(x) directly
@@ -123,7 +123,7 @@ public class Algorithms {
      * @param y = value of y
      * @return value of x^y
      */
-    public static double power(double x, double y){
+    public static double power(double x, double y) throws MathException {
 
         double a = 1;
         double sum = 1;
@@ -191,9 +191,11 @@ public class Algorithms {
      * @param value of x
      * @return value of 10^x
      */
-    public static double tenEx(double value) {
+    public static double tenEx(double value) throws MathException {
 
-        return exp(value * LN10);
+
+            return power(10, value);
+
 
     }
 
@@ -298,8 +300,10 @@ public class Algorithms {
      * @param value of n
      * @return factorial value of n
      */
-    private static double factorial (int n) {
+    public static double factorial(int n)  {
         assert n > 0: "Negative Factorial.";
+
+
 
         double result = 1;
 
@@ -344,7 +348,7 @@ public class Algorithms {
      * @param power
      * @return value of the natural exponent of power.
      */
-    private static double natExp(double power) {
+    private static double natExp(double power)  {
         int NUMBER_OF_TERMS = 175;
         double result = 0;
         int powersOf2 = 0;

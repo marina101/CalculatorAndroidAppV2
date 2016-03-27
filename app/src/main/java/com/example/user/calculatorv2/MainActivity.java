@@ -327,6 +327,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v)
                     {
                         TextView output = (TextView)findViewById(R.id.editText);
+                        if(output.getText().toString().equals("0")){
+                            output.setText("");
+                        }
                         String text = output.getText().toString();
                         String newText = text + "E^";
                         output.setText(newText);
