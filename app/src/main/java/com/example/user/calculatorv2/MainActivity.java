@@ -331,7 +331,7 @@ public class MainActivity extends AppCompatActivity {
                             output.setText("");
                         }
                         String text = output.getText().toString();
-                        String newText = text + "E^";
+                        String newText = text + "e^";
                         output.setText(newText);
                     }
                 }
