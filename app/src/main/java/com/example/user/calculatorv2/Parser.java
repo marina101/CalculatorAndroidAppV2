@@ -4,10 +4,31 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
+/**
+ * Parser that plays the role of syntactic analyzer, semantic analyzer and mathematical evaluator.
+ * 
+ * The method parse(String) should be used to process to the evaluation of a mathematical expression.
+ * 
+ * The internal functioning of the parser can be summarized as follow:
+ * First, the parser employs the Shutting-yard algorithm to convert the given expression in postfix notation form.
+ * Secondly, the created postfix expression is then processed to return a single evaluated value referring 
+ * to the calculation of the entire mathematical expression.
+ * To ease the process of building the postfix expression, the parser uses a scanner instance to retrieve tokens in the given mathematical expression.   
+ * 
+ * 
+ * 
+ * @author Jerome Charriere
+ */
+
 public class Parser {
 	
 	public CustomScanner m_scanner;
 	
+	
+	
+	/**
+	 * Class constructor.
+	 */
 	public Parser() {
 		
 		m_scanner = new CustomScanner();
@@ -15,6 +36,14 @@ public class Parser {
 	}
 	
 	
+	
+	/**
+	 *  Proceed to the evaluation of a mathematical expression expressed as a string.
+	 * 
+	 * @param expression Mathematical expression to evaluate.
+	 * @return Evaluated value as a double.
+	 * @throws MathException If the given mathematical expression is badly formed.
+	 */
 	public double parse(String expression) throws MathException {
 		
 		// Prepare the scanner.
@@ -29,6 +58,13 @@ public class Parser {
 	
 	
 	
+	/**
+	 *  Converts a mathematical expression from infix to postfix. 
+	 * 
+	 * @param expression Mathematical expression using infix notation.
+	 * @return Queue bearing tokenized mathematical elements sorted according to the postfix notation.
+	 * @throws MathException
+	 */
 	private Queue<Token> prepare(String expression) throws MathException {
 		
 		Stack<Token> opStack = new Stack<Token>();
@@ -148,6 +184,14 @@ public class Parser {
 	}
 	
 	
+	
+	/** 
+	 * Proceed to the proper evaluation of a postfix mathematical expression.
+	 * 
+	 * @inputQueue Queue bearing mathematical elements sorted according to the postfix notation.
+	 * @return Evaluated value.
+	 * @throws MathException
+	 */
 	private double evaluate(Queue<Token> inputQueue) throws MathException {
 		
 		Stack<Token> stack = new Stack<Token>();
