@@ -237,7 +237,9 @@ public class MainActivity extends AppCompatActivity {
                         TextView window = (TextView)findViewById(R.id.textWindow);
                         window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
-                        output.append(".");
+                        String text = output.getText().toString();
+                        String newText = text + ".";
+                        output.setText(newText);
 
                     }
                 }
