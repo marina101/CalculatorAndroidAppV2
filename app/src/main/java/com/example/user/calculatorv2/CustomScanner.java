@@ -120,8 +120,9 @@ class CustomScanner {
 				stringBuffer += c;
 				c = nextChar();
 				if (CharacterClassifier.isDigit(c)) {
-					c = nextChar();
 					stringBuffer += c;
+					c = nextChar();
+
 					while (CharacterClassifier.isDigit(c)) {
 						stringBuffer += c;
 						c = nextChar();
