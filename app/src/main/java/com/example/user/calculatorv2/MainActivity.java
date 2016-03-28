@@ -16,10 +16,8 @@ import android.widget.TextView;     //for output
  * Author: Marina Chirchikova
  */
 public class MainActivity extends AppCompatActivity {
-    public String sign = "";
-    public String total = "";
-    public Double tempDouble = 0.0;
-    public Double tempDouble2 = 0.0;
+    public String line;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,21 +67,22 @@ public class MainActivity extends AppCompatActivity {
 
         TextView output = (TextView)findViewById(R.id.editText);
         output.append(String.valueOf(0));
+        TextView window = (TextView)findViewById(R.id.textWindow);
 
         //Creates event handlers for each button
 
         button0.setOnClickListener(
-            new Button.OnClickListener()
-            {
-                public void onClick(View v)
-                {
-                    TextView output = (TextView)findViewById(R.id.editText);
-                    if(output.getText().toString().equals("0")){
-                        output.setText("");
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
+                        TextView output = (TextView) findViewById(R.id.editText);
+                        if (output.getText().toString().equals("0")) {
+                            output.setText("");
+                        }
+                        output.append("0");
                     }
-                    output.append("0");
                 }
-            }
         );
 
         button1.setOnClickListener(
@@ -91,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -105,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -119,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -133,6 +138,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -147,6 +154,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -161,6 +170,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -175,6 +186,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -189,6 +202,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -203,6 +218,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -217,6 +234,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         output.append(".");
 
@@ -230,21 +249,23 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         String str = output.getText().toString();
                         int n = str.length();
                         if(n==1){
                             output.setText("0");
                         }
-                        else if ((str.substring(n-2)).equals("LN")){
+                        else if ((str.substring(n-2)).equals("ln")){
                             String newstr = str.substring(0,n-2);
                             output.setText(newstr);
                         }
-                        else if (n >= 3 && (str.substring(n-3)).equals("SIN")){
+                        else if (n >= 3 && (str.substring(n-3)).equals("sin")){
                             String newstr = str.substring(0, n-3);
                             output.setText(newstr);
                         }
-                        else if (n >= 4 && (str.substring(n-4)).equals("SQRT")){
+                        else if (n >= 4 && (str.substring(n-4)).equals("sqrt")){
                             String newstr = str.substring(0, n-4);
                             output.setText(newstr);
                         }
@@ -256,11 +277,14 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
+        //Clears the line
         buttonC.setOnClickListener(
                 new Button.OnClickListener()
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         output.setText("0");
                     }
@@ -274,6 +298,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         String text = output.getText().toString();
                         String newText = text + "+";
@@ -287,6 +313,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         String text = output.getText().toString();
                         String newText = text + "-";
@@ -300,6 +328,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         String text = output.getText().toString();
                         String newText = text + "*";
@@ -313,6 +343,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         String text = output.getText().toString();
                         String newText = text + "/";
@@ -326,6 +358,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -342,6 +376,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -358,6 +394,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -374,6 +412,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -390,6 +430,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -406,6 +448,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         String text = output.getText().toString();
                         String newText = text + "^";
@@ -419,6 +463,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -435,6 +481,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     public void onClick(View v)
                     {
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText("");
                         TextView output = (TextView)findViewById(R.id.editText);
                         if(output.getText().toString().equals("0")){
                             output.setText("");
@@ -453,6 +501,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         TextView output = (TextView) findViewById(R.id.editText);
                         String expression = output.getText().toString();
+                        TextView window = (TextView)findViewById(R.id.textWindow);
+                        window.setText(expression);
                         output.setText("");
                         double answer;
                         String message;

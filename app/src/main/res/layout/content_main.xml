@@ -11,7 +11,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.user.calculatorv2.MainActivity"
     tools:showIn="@layout/activity_main"
-    android:background="#990033">
+    android:background="#BDFCC9">
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -303,7 +303,8 @@
         android:layout_above="@+id/buttonXY"
         android:layout_toRightOf="@+id/display"
         android:layout_alignRight="@+id/buttonC"
-        android:layout_alignEnd="@+id/buttonC" />
+        android:layout_alignEnd="@+id/buttonC"
+        android:gravity="top|left" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -348,7 +349,18 @@
         android:layout_alignLeft="@+id/buttonP"
         android:layout_alignStart="@+id/buttonP"
         android:layout_toLeftOf="@+id/buttonR"
-        android:layout_toStartOf="@+id/buttonR" /><![CDATA[
+        android:layout_toStartOf="@+id/buttonR" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textWindow"
+        android:layout_below="@+id/display"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText" /><![CDATA[
 
     />
 
