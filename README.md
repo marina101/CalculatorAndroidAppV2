@@ -1,43 +1,33 @@
-#Infinity_calculator#
+# Infinity_calculator
 
-Infinity scientific calculator for computing transcendental functions - a software engineering group project 
+## Infinity scientific calculator for computing transcendental functions - a software engineering group project 
 
-#Table of Contents#
-
+Table of Contents
 1. Starting the calculator 
 2. Entering numbers
 3. Doing calculations
 
-#Starting the calculator#
+# Starting the calculator
 
-To start view the calculator on a computer, it needs to be run on an Android Emulator. 
+To start view the calculator on a computer, it needs to be run on an Android Emulator
   -step one: open Android Studio
   -step two: choose "load project from github"
   -step three: run the project on the emulator in Android Studio
 
-To start the calculator from an android phone, press the calculator icon on the Android app screen.
+To start the calculator from an android phone, press the calculator icon on the Android app screen. 
 
-#Entering numbers#
+# Entering numbers and performing calculations
 
-When entering a number, pressing `+/-` will change the sign of the number. Pressing `.` place the decimal point in that number.
+Please enter the expression that you wish to evaluate. Please use operators between numbers. Multiplication must be explicit and not implicit (for example, instead of entering: 4(5+1), please enter 4*(5+1).
 
-#Doing calculations#
+When using transcendential functions, simply enter the values to be calculated by the function directly after the function, for example, to calculate sine of 10, enter "sin10" or "sin(5+5)" - note you do not need brackets if the function is evaluating only one value.
 
-To do a calculation, follow these steps:
+Once you have entered your function, press "=" to see the result.
 
-For calculating a simple function (with addition, subtraction, multiplication, division and x^y):
+# Clearing the screen or deleting values
 
-1. Enter the first number.
-2. Enter the desired operation.
-3. Enter the second number.
-4. The calculator will display the result in the bottom screen.
+The "C" button will clear the screen and set your value back to 0.
 
-So for example, to get the result of `45 - 5`, presse the number `45`, then `-`, then `5`, which will print out the result in the bottom screen (i.e. `40`). Note that division by zero will result in an error.
+The "Del" value will delete the right-most operator or number from the expression.
 
-For calculating a complex function (`sin`, `e^`, `10^`, `ln`, `log` and square root):
 
-1. Enter the first number.
-2. Enter the desired operation.
-3. The calculator will display the result in the bottom screen.
-
-So for example, to get the result of `10^5`, first press `5`, then press `10^,` which will print out the result in the bottom screen (i.e. `10000`). Note that `sin` takes it input in radians.
