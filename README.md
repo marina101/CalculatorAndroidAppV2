@@ -18,7 +18,7 @@ To start the calculator from an android phone, press the calculator icon on the 
 
 # Entering numbers and performing calculations
 
-Please enter the expression that you wish to evaluate. Please use operators between numbers. Multiplication must be explicit and not implicit (for example, instead of entering: 4(5+1), please enter 4*(5+1).
+Please enter the expression that you wish to evaluate. Please use operators between numbers. Multiplication must be explicit and not implicit (for example, instead of entering: 4(5+1), please enter 4*(5+1). Please use explicit parenthese.
 
 When using transcendential functions, simply enter the values to be calculated by the function directly after the function, for example, to calculate sine of 10, enter "sin10" or "sin(5+5)" - note you do not need brackets if the function is evaluating only one value.
 
