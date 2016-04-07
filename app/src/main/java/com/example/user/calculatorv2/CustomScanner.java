@@ -103,7 +103,6 @@ class CustomScanner {
 	
 	/**
 	 *  Rewind the reading cursor by one character
-	 * 
 	 */
 	private void backChar() {
 		
@@ -114,7 +113,7 @@ class CustomScanner {
 	
 	
 	/**
-	 *  Process and consume characters of the mathematical expression until forming a new token.
+	 * Process and consume characters of the mathematical expression until forming a new token.
 	 * If the scanner has finished processing the mathematical expression, it will return a token instance of type T_EOE.
 	 * 
 	 * @return Token instance.
@@ -211,7 +210,7 @@ class CustomScanner {
 		if (c == '^') { return createToken(Token.T_OPERATOR_POW, 0, new OperatorInfo(4, false)); }
 		
 		// Error: unknown token.
-		throw new MathException("Unrecognized lexical element");
+		throw new MathException("Unrecognised lexical element");
 		
 	}
 		
