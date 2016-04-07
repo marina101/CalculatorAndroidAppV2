@@ -5,7 +5,7 @@ import java.util.Queue;
 import java.util.Stack;
 
 /**
- * Parser that plays the role of syntactic analyzer, semantic analyzer and mathematical evaluator.
+ * Parser that plays the role of syntactic analyser, semantic analyser and mathematical evaluator.
  * 
  * The method parse(String) should be used to process to the evaluation of a mathematical expression.
  * 
@@ -38,7 +38,7 @@ public class Parser {
 	
 	
 	/**
-	 *  Proceed to the evaluation of a mathematical expression expressed as a string.
+	 * Proceed to the evaluation of a mathematical expression expressed as a string.
 	 * 
 	 * @param expression Mathematical expression to evaluate.
 	 * @return Evaluated value as a double.
@@ -59,7 +59,7 @@ public class Parser {
 	
 	
 	/**
-	 *  Converts a mathematical expression from infix to postfix. 
+	 * Converts a mathematical expression from infix to postfix. 
 	 * 
 	 * @param expression Mathematical expression using infix notation.
 	 * @return Queue bearing tokenized mathematical elements sorted according to the postfix notation.
@@ -151,7 +151,7 @@ public class Parser {
 				
 				if (opStack.isEmpty()) {
 					// Error: Mismatched parentheses
-					throw new MathException("Mismatched parantheses");
+					throw new MathException("Mismatched parentheses");
 				}
 				
 				else {
@@ -172,7 +172,7 @@ public class Parser {
 			int topType = opStack.peek().getType();
 			if ((topType == Token.T_OPENPAR) || (topType == Token.T_CLOSEPAR)) {
 				// Error: Mismatched parentheses.
-				throw new MathException("Mismatched parantheses");
+				throw new MathException("Mismatched parentheses");
 			}
 			
 			output.add(opStack.pop());
@@ -247,8 +247,8 @@ public class Parser {
 			else if (tk.isOperator()) {
 								
 				if (stack.size() < 2) {
-					// Error: invalid math expression
-					throw new MathException("Insufficient values inputed.");
+					// Error: invalid maths expression
+					throw new MathException("Insufficient values Entered.");
                 }
 
                 Token right =  stack.pop();
@@ -302,7 +302,7 @@ public class Parser {
 		}
 		
 		if (stack.size() > 1) {
-			// Error: invalid math expression
+			// Error: invalid maths expression
 			throw new MathException("Too many values");
 			
 		}
