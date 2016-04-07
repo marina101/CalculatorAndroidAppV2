@@ -2,13 +2,13 @@ package com.example.user.calculatorv2;
 
 /**
  * Created on 2016-02-22.
- * Algorithms written by: Christopher Birkbeck
-                          Jerome Charriere
-						  Marina Chirchikova
-						  Ricardo Bezerra De Oliveira
-                          Shuai Chen
-						  Tarnum Sharma
-                          
+ * Algorithms written by: 
+ * Christopher Birkbeck
+ * Jerome Charriere
+ * Marina Chirchikova
+ * Ricardo Bezerra De Oliveira
+ * Shuai Chen
+ * Tarnum Sharma                          
  */
 public class Algorithms {
     private static final double LN10 = 	2.3025850929940457;
